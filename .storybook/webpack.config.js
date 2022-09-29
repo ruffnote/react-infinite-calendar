@@ -4,11 +4,11 @@ module.exports = {
       {
         test: /(\.scss)$/,
         loaders: [
-          'style',
-          'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]',
-          'sass?sourceMap'
-        ]
-      }
-    ]
-  }
+          "style",
+          "css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]",
+          "sass?sourceMap",
+        ],
+      },
+    ],
+  },
 };
