@@ -34,7 +34,6 @@
     "react": "^15.3.0 || ^16.0.0-alpha"
   },
   "devDependencies": {
-    "babel-eslint": "^7.0.0",
     "babel-plugin-css-modules-transform": "^1.2.1",
     "eslint": "^3.8.1",
     "eslint-config-react-app": "^0.5.1",
