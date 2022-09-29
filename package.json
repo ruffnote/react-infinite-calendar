@@ -34,8 +34,6 @@
     "react": "^15.3.0 || ^16.0.0-alpha"
   },
   "devDependencies": {
-    "@kadira/storybook": "^2.35.3",
-    "@kadira/storybook-addon-options": "^1.0.1",
     "babel-eslint": "^7.0.0",
     "babel-plugin-css-modules-transform": "^1.2.1",
     "eslint": "^3.8.1",
