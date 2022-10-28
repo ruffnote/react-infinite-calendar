@@ -1,10 +1,7 @@
-import React from 'react';
-import {render} from 'react-dom';
-import InfiniteCalendar, {
-  Calendar,
-  withRange,
-} from 'react-infinite-calendar';
-import 'react-infinite-calendar/styles.css';
+import React from "react";
+import { render } from "react-dom";
+import InfiniteCalendar, { Calendar, withRange } from "react-infinite-calendar";
+import "react-infinite-calendar/styles.css";
 
 const CalendarWithRange = withRange(Calendar);
 
@@ -16,8 +13,8 @@ render(
       end: new Date(2017, 1, 18),
     }}
     locale={{
-      headerFormat: 'MMM Do',
+      headerFormat: "MMM do",
     }}
   />,
-  document.querySelector('#root')
+  document.querySelector("#root")
 );

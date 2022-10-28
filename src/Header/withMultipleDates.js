@@ -2,7 +2,7 @@ import React from 'react';
 import {withImmutableProps} from '../utils';
 import defaultSelectionRenderer from './defaultSelectionRenderer';
 import Slider from './Slider';
-import parse from 'date-fns/parse';
+import parseISO from 'date-fns/parseISO';
 import format from 'date-fns/format';
 
 export default withImmutableProps(({renderSelection, setDisplayDate}) => ({
@@ -12,7 +12,7 @@ export default withImmutableProps(({renderSelection, setDisplayDate}) => ({
     }
 
     const dates = values.sort();
-    const index = values.indexOf(format(parse(displayDate), 'YYYY-MM-DD'));
+    const index = values.indexOf(format(parseISO(displayDate), 'yyyy-MM-dd'));
 
     return (
       <Slider

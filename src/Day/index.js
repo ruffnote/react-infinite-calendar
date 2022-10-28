@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import classNames from 'classnames';
-import parse from 'date-fns/parse';
+import parseISO from 'date-fns/parseISO';
 import styles from './Day.scss';
 
 export default class Day extends PureComponent {
@@ -8,7 +8,7 @@ export default class Day extends PureComponent {
     let {date, isDisabled, onClick} = this.props;
 
     if (!isDisabled && typeof onClick === 'function') {
-      onClick(parse(date));
+      onClick(parseISO(date));
     }
   };
 

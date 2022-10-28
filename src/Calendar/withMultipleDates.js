@@ -3,7 +3,7 @@ import {withDefaultProps} from './';
 import {sanitizeDate, withImmutableProps} from '../utils';
 import enhanceHeader from '../Header/withMultipleDates';
 import format from 'date-fns/format';
-import parse from 'date-fns/parse';
+import parseISO from 'date-fns/parseISO';
 
 // Enhance Day component to display selected state based on an array of selected dates
 export const enhanceDay = withPropsOnChange(['selected'], props => ({
@@ -12,7 +12,7 @@ export const enhanceDay = withPropsOnChange(['selected'], props => ({
 
 // Enhance year component
 const enhanceYears = withProps(({displayDate}) => ({
-  selected: displayDate ? parse(displayDate) : null,
+  selected: displayDate ? parseISO(displayDate) : null,
 }));
 
 // Enhancer to handle selecting and displaying multiple dates
@@ -45,7 +45,7 @@ export const withMultipleDates = compose(
     },
     selected: props.selected
       .filter(date => sanitizeDate(date, props))
-      .map(date => format(date, 'YYYY-MM-DD')),
+      .map(date => format(date, 'yyyy-MM-dd')),
   })),
 );
 
@@ -55,7 +55,7 @@ function handleSelect(date, {onSelect, setDisplayDate}) {
 }
 
 function handleYearSelect(date, callback) {
-  callback(parse(date));
+  callback(parseISO(date));
 }
 
 function getInitialDate({selected}) {
@@ -63,8 +63,8 @@ function getInitialDate({selected}) {
 }
 
 export function defaultMultipleDateInterpolation(date, selected) {
-  const selectedMap = selected.map(date => format(date, 'YYYY-MM-DD'));
-  const index = selectedMap.indexOf(format(date, 'YYYY-MM-DD'));
+  const selectedMap = selected.map(date => format(date, 'yyyy-MM-dd'));
+  const index = selectedMap.indexOf(format(date, 'yyyy-MM-dd'));
 
   return (index === -1)
     ? [...selected, date]
