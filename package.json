@@ -12,7 +12,7 @@
     "styles.css"
   ],
   "scripts": {
-    "build": "npm run clean && nwb build-react-component --no-vendor",
+    "build": "webpack --mode production",
     "clean": "nwb clean-module && nwb clean-demo",
     "start": "nwb serve-react-demo",
     "storybook": "start-storybook -p 6006",
@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.21.4",
     "@storybook/addon-actions": "^6.5.12",
     "@storybook/addon-essentials": "^6.5.12",
     "@storybook/addon-interactions": "^6.5.12",
@@ -55,7 +56,9 @@
     "node-sass": "^4.5.0",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "sass-loader": "10"
+    "sass-loader": "10",
+    "webpack": "4.46.0",
+    "webpack-cli": "4.10.0"
   },
   "author": {
     "name": "Clauderic Demers",
